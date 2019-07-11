@@ -1,0 +1,15 @@
+-health and shield bars (Also upgraded shields such as heat shields)
+(these take damage depending on momentum of ship and asteroids)
+(these also take damage from lasers from enemies)
+
+-moving background
+
+-8 bit music and sounds
+
+-score based on survival time, and objects destroyed/ enemies killed
+
+-gameplay loop consists of draggings spaceship and the "intensity of the drag" will determine spaceship speed and thus momentum
+
+-possibility for different skins for ships
+
+-different vectors and projections for each object (dome spawn field for entities)
