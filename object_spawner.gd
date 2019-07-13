@@ -24,9 +24,12 @@ func spawnEntity():
 	var objecttogenerate = randf()
 	
 	### Change these values in the 
+	var object
 	if (objecttogenerate < asteroidspawnrate):
-		var asteroid = preload("res://assets/rocks/asteroid.tscn")
+		object = preload("res://assets/rocks/asteroid.tscn")
 	elif (objecttogenerate < shipspawnrate && objecttogenerate > asteroidspawnrate):
-		var enemyship = preload("res://assets/enemies/enemyship.tscn")
+		object = preload("res://assets/enemies/EnemyShip.tscn")
+		
+	object.Position2D(xpos, ypos)
 	
 	pass
