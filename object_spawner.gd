@@ -18,6 +18,11 @@ func _on_Timer_timeout():
 	
 func spawnEntity():
 	var spawn_point = rand_range(-PI/2, PI/2)
+	var spawn_velocity = -1
+	if spawn_point < 0:
+		spawn_velocity = rand_range(-PI/2, 0)
+	else:
+		spawn_velocity = rand_range(0,PI/2)
 	var xpos = sin(spawn_point) * radius
 	var ypos = sin(spawn_point) * radius
 	
@@ -25,11 +30,14 @@ func spawnEntity():
 	
 	### Change these values in the 
 	var object
-	if (objecttogenerate < asteroidspawnrate):
+	if true:#(objecttogenerate < asteroidspawnrate):
 		object = preload("res://assets/rocks/asteroid.tscn")
 	elif (objecttogenerate < shipspawnrate && objecttogenerate > asteroidspawnrate):
 		object = preload("res://assets/enemies/EnemyShip.tscn")
 		
-	object.Position2D(xpos, ypos)
+	
+	object.start(spawn_point)
+	get_parent().add_child(object)
+	
 	
 	pass
