@@ -16,7 +16,14 @@ _global_script_class_icons={
 [application]
 
 config/name="escapevelocity"
+run/main_scene="res://game_scene.tscn"
 config/icon="res://icon.png"
+
+[display]
+
+window/size/height=720
+window/size/test_width=1024
+window/size/test_height=720
 
 [rendering]
 
