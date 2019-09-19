@@ -1,8 +1,8 @@
 extends KinematicBody2D
 
 var motion = Vector2()
-const MAX_SPEED = 150
-const ACCELERATION = 25
+const MAX_SPEED = 300
+const ACCELERATION = 60
 
 func _physics_process(delta):
 	
@@ -18,5 +18,21 @@ func _physics_process(delta):
 	elif Input.is_action_pressed("ui_down"):
 		motion.y =min(motion.y+ACCELERATION,MAX_SPEED)
 		
+	else:
+		if motion.x > 0:
+			if motion.x-15 >= 0:
+				motion.x-=15
+				
+		if motion.x < 0:
+			if motion.x+15 <= 0:
+				motion.x+=15
+			
+		if motion.y > 0:
+			if motion.y-15 >= 0:
+				motion.y -= 15
+			
+		if motion.y < 0:
+			if motion.y+15 <= 0:
+				motion.y += 15
 	
 	motion = move_and_slide(motion)

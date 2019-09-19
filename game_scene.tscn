@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://KinematicBody2D.gd" type="Script" id=1]
 [ext_resource path="res://assets/rockets/rocket00.png" type="Texture" id=2]
+[ext_resource path="res://assets/rockets/wow.png" type="Texture" id=3]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 6.0
@@ -10,7 +11,7 @@ height = 15.0
 [node name="Space" type="Node"]
 
 [node name="player" type="KinematicBody2D" parent="."]
-position = Vector2( 320, 192 )
+position = Vector2( 352, 192 )
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_group_": true
@@ -22,3 +23,7 @@ texture = ExtResource( 2 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="player"]
 position = Vector2( 0, -2 )
 shape = SubResource( 1 )
+
+[node name="Sprite2" type="Sprite" parent="player"]
+position = Vector2( -1, 40 )
+texture = ExtResource( 3 )
